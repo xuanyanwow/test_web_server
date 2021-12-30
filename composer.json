@@ -1,0 +1,23 @@
+{
+    "name": "siam/siam_test_web_server",
+    "description": "Siam 自用开发工具，配置内网穿透给项目",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "宣言",
+            "email": "59419979@qq.com"
+        }
+    ],
+    "require": {
+        "siam/commom-helper": "2.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Siam\\TestWebServer\\" : "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.11"
+    },
+    "bin": ["bin/web_server.bat", "bin/natapp.exe"]
+}
