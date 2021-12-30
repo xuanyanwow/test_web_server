@@ -20,11 +20,10 @@ $hosts = \Siam\TestWebServer\HostsService::replace( $hosts, $natapp, "127.0.0.1"
 $hm->setHosts($hosts);
 unset($hm);
 
-
 $host = $natapp;
 $port = "80";
 $root = getcwd();
-$php_path = $args['php'] ?? "php";
+$php_path = isset($args['opts']['php']) ? $args['opts']['php'] : "php";
 
 $command = sprintf(
     '%s -S %s:%d -t %s',
@@ -33,5 +32,9 @@ $command = sprintf(
     $port,
     escapeshellarg($root)
 );
+
+if ($php_path !== "php"){
+    echo "由于指定了php路径，可能无法正常输出log到此窗口，请直接访问{$host}:{$port}测试是否开启服务\n";
+}
 
 passthru($command);
