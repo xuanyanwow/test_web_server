@@ -11,16 +11,18 @@ use Siam\TestWebServer\NatappHelperService;
 
 $args = CommandLine::parseArgs();
 
-
-$natapp = NatappHelperService::get_hosts();
+if(isset($args['opts']['hosts'])){
+    $host = $args['opts']['hosts'];
+}else{
+    $host = NatappHelperService::get_hosts();
+}
 
 $hm = new HostsManage(HOST_FILE);
 $hosts = $hm->getHosts();
-$hosts = \Siam\TestWebServer\HostsService::replace( $hosts, $natapp, "127.0.0.1" );
+$hosts = \Siam\TestWebServer\HostsService::replace( $hosts, $host, "127.0.0.1" );
 $hm->setHosts($hosts);
 unset($hm);
 
-$host = $natapp;
 $port = "80";
 $root = getcwd();
 $php_path = isset($args['opts']['php']) ? $args['opts']['php'] : "php";
