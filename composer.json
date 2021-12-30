@@ -19,5 +19,5 @@
     "require-dev": {
         "phpunit/phpunit": "9.5.11"
     },
-    "bin": ["bin/web_server.bat", "bin/natapp.exe"]
+    "bin": ["bin/test_web_server","bin/config.ini", "bin/natapp.exe"]
 }

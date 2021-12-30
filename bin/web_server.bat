@@ -1,1 +1,0 @@
-F:\Env\phpstudy_pro\Extensions\php\php7.3.4nts\php.exe -S 5gfdw7.natappfree.cc:80
