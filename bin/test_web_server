@@ -3,7 +3,7 @@
 $test_web_server_bin_path = dirname(__FILE__);
 const HOST_FILE = 'C:\Windows\System32\drivers\etc\hosts';
 
-require_once dirname(__FILE__)."/../vendor/autoload.php";
+require_once getcwd()."/vendor/autoload.php";
 
 use Siam\CommandLine;
 use Siam\HostsManage;
